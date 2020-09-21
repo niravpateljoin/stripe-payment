@@ -1,0 +1,59 @@
+<form action="" method="post" id="payment-form">
+  <div class="modal-dialog" style="margin-top: 233.5px; margin-bottom: 233.5px;">
+    <div class="modal-content" style="border-radius: 0;box-shadow: none;">
+      <div class="modal-header">
+        <h4 class="modal-title">Add Payment Info (<label for="card-element">Credit or Debit card</label>)</h4>
+        {# <button type="button" class="close" data-dismiss="modal"><i class="material-icons">clear</i></button> #}
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="font-size:24px !important;">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body" style="padding: 0 32px !important;">
+        <div id="card-errors" role="alert" class="alert alert-danger" style="display:none;"></div>
+        <div class="form-row add-payment-info" id="customForm">
+          <div class="row">
+            <div class="col-xs-12 has-line-middle field" style="width:100%; margin-top:20px;">
+              <span class="brand"><i class="pf pf-credit-card" id="brand-icon"></i></span>
+              <div id="paymentCardNumber" class="cell-input empty"></div>
+              <label for="paymentCardNumber">Card number</label>
+              <div class="baseline"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-md-6 pr has-line-middle field" style="margin-right:0px !important;">
+              <div id="paymentCardExpiry" class="cell-input empty"></div>
+              <label for="paymentCardExpiry">Expiration</label>
+              <div class="baseline"></div>
+            </div>
+            <div class="col-xs-12 col-sm-6 pl has-line-middle field" style="margin-left:0px !important;">
+              <div id="paymentCardCvc" class="cell-input empty"></div>
+              <label for="paymentCardCvc">CVC</label>
+              <div class="baseline"></div>
+            </div>
+          </div>
+        {# <input type="hidden" name="newPlanFrequency" value="{{ planFrequency }}">
+        <input type="hidden" name="newPlanName" value="{{ objPlan.PlanName }}">
+        <input type="hidden" name="newPlanPrice" value="{{ objPlanPrice[0]['planPrice'] }}">
+        <input type="hidden" name="payableAmount" value="{{ objPlanPrice[0]['planPrice'] }}">
+        <input type="hidden" name="newPlanExpiryDate" value="{{ newPlanExpiryDate|date("M d, Y") }}">
+        <input type="hidden" name="newPlanRenewalDate" value="{{ newPlanExpiryDate|date("M d, Y") }}"> #}
+        {# <input type="hidden" name="isUpgrade" value="{{ planData['isUpgrade'] }}">
+        <input type="hidden" name="isDowngrade" value="{{ planData['isDowngrade'] }}">
+        <input type="hidden" name="isCancelled" value="{{ planData['isCancelled'] }}">
+        <input type="hidden" name="isWallet" value="{{ planData['isWallet'] }}">
+        <input type="hidden" name="balanceAmount" value="{{ planData['balanceAmount'] }}">
+        <input type="hidden" name="previousPlanFrequency" value="{% if planData['previousPlanFrequency'] is defined and planData['previousPlanFrequency'] is not empty  %}{{ planData['previousPlanFrequency'] }}  {% endif %}">
+        <input type="hidden" name="previousPlanName" value="{% if planData['previousPlanName'] is defined and planData['previousPlanName'] is not empty  %} {{ planData['previousPlanName'] }} {% endif %}">
+        <input type="hidden" name="previousPlanExpiryDate" value="{% if planData['previousPlanExpiryDate'] is defined and planData['previousPlanExpiryDate'] is not empty  %} {{ planData['previousPlanExpiryDate']|date("Y-m-d H:i:s") }} {% endif %}"> #}
+        <div class="loader-block">
+          <div class="loader" align="center" style="display:none;"></div>
+        </div>
+      </div>
+      <div class="modal-footer button-group mt-19 pb-21 pr-0">
+        <button type="button" class="btn-cancel mr-25" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn-default btn pt-9 pb-9 pl-40 pr-40" id="paymentSubmit" {# onclick="paymentConfirm()" #}>Submit</button>
+      </div>
+    </div>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,223 @@
+.payment-modal.form-modal .modal-dialog {
+  max-width: 610px;
+}
+
+.payment-modal .modal-header {
+  padding-bottom: 0;
+  padding-top: 20px;
+  padding-right: 27px;
+}
+
+.payment-modal .modal-footer {
+  text-align: right;
+}
+
+#paymentCardNumber,
+#paymentCardNumber + label  {
+  padding-left: 25px;
+}
+
+#paymentCardNumber.focused + label {
+  padding-left: 30px;
+}
+
+#stripePopup .modal-title {
+	font-size: 18px;
+    font-weight: 1000;
+    margin: 0;
+    line-height: 1.42857143;
+    color: #666666;
+}
+
+button.btn-cancel {
+  background-color: #fff;
+  border-radius: 0;
+  color: #cd1515;
+  padding: 10px 0;
+  border: solid 0 #fff;
+  line-height: 16px;
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+  font-weight: 400;
+  margin-top: 10px;
+  text-transform: uppercase;
+  font-size: 13px;
+  margin-right: 25px!important;
+  margin-top: 0px;
+  cursor: pointer;
+}
+
+button#paymentSubmit {
+  padding-right: 40px!important;
+  padding-left: 40px!important;
+  padding-bottom: 9px!important;
+  background: #ff1d47;
+  color: #fff;
+  font-weight: 200;
+}
+
+.add-payment-info * {
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.add-payment-info .baseline {
+  position: absolute;
+  width: 95%;
+  height: 1px;
+  left: 0;
+  bottom: 0;
+  background-color: #cfd7df;
+  transition: background-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.add-payment-info label {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  color: #cfd7df;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transform-origin: 0 50%;
+  cursor: text;
+  transition-property: color, transform;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  background: #fff;
+}
+
+.add-payment-info .cell-input {
+  position: absolute;
+  width: 95%;
+  left: 0;
+  bottom: 0;
+  padding-bottom: 7px;
+  color: #32325d;
+  background-color: transparent;
+}
+
+.add-payment-info .field {
+  position: relative;
+  height: 50px;
+  margin: 0;
+}
+
+.add-payment-info .field.pr {
+  margin-right: 5px;
+  width: 47%;
+  padding-right: 16px;
+}
+
+.add-payment-info .field.pl {
+  padding-left: 16px;
+  width: 47%;
+  margin-left: 15px;
+}
+
+.add-payment-info .cell-input::-webkit-input-placeholder {
+  color: transparent;
+  transition: color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.add-payment-info .cell-input::-moz-placeholder {
+  color: transparent;
+  transition: color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.add-payment-info .cell-input:-ms-input-placeholder {
+  color: transparent;
+  transition: color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.add-payment-info .cell-input.StripeElement {
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  will-change: opacity;
+}
+
+.add-payment-info .cell-input.focused,
+.add-payment-info .cell-input:not(.empty) {
+  opacity: 1 !important;
+}
+
+.add-payment-info .cell-input.focused::-webkit-input-placeholder,
+.add-payment-info .cell-input:not(.empty)::-webkit-input-placeholder {
+  color: #cfd7df !important;
+}
+
+.add-payment-info .cell-input.focused::-moz-placeholder,
+.add-payment-info .cell-input:not(.empty)::-moz-placeholder {
+  color: #cfd7df !important;
+}
+
+.add-payment-info .cell-input.focused:-ms-input-placeholder,
+.add-payment-info .cell-input:not(.empty):-ms-input-placeholder {
+  color: #cfd7df !important;
+}
+
+.add-payment-info .cell-input.focused + label,
+.add-payment-info .cell-input:not(.empty) + label {
+  color: #0e5487 !important;
+  transform: scale(0.88) translateY(-26px) !important;
+  cursor: default !important;
+  background: transparent !important;
+}
+
+.add-payment-info .empty {
+  border: none !important;
+  border-radius: none !important;
+  display: unset !important;
+}
+
+.add-payment-info .cell-input.focused + label {
+  color: #0e5487 !important;
+}
+
+.add-payment-info .cell-input.invalid + label {
+  color: #cd1515 !important;
+}
+
+.add-payment-info .cell-input.focused + label + .baseline {
+  background-color: #0e5487 !important;
+}
+
+.add-payment-info .cell-input.focused.invalid + label + .baseline,
+.add-payment-info .cell-input.invalid + label + .baseline {
+  background-color: #cd1515 !important;
+}
+
+.add-payment-info input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border-style: none;
+}
+
+.add-payment-info input:-webkit-autofill {
+  -webkit-text-fill-color: #e39f48;
+  transition: background-color 100000000s;
+  -webkit-animation: 1ms void-animation-out;
+}
+
+.add-payment-info .StripeElement--webkit-autofill {
+  background: transparent !important;
+}
+
+.add-payment-info input {
+  -webkit-animation: 1ms void-animation-out;
+}
+
+.add-payment-info input:active {
+  background-color: #159570;
+}
+
+.add-payment-info .brand {
+  position: absolute;
+  top: 25px;
+  left: -3px;
+  z-index: 20;
+}

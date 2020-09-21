@@ -1,0 +1,50 @@
+{% extends 'FrontBundle::Layout/base.html.twig' %}
+
+{% set title = 'Checkout'|trans %}
+
+{% block title %}{{ 'Checkout'|trans }}{% endblock %}
+{% block stylesheets %}
+    {% stylesheets
+    '@FrontBundle/Resources/public/css/bill.css' filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css">
+    {% endstylesheets %}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paymentfont/1.1.2/css/paymentfont.min.css">
+{% endblock %}
+{% block content %}
+    <div class="container">
+        {% include 'FrontBundle::Helper/content_title.html.twig' %}
+
+        {{ form_start(order) }}
+            <fieldset class="fieldset-gateway">
+                <legend>{{ 'Payment Gateway'|trans }}</legend>
+                {{ form_row(order.gateway) }}
+            </fieldset>
+
+            <fieldset class="fieldset-company">
+                <legend>{{ 'Company Information'|trans }}</legend>
+                {{ form_rest(order) }}
+            </fieldset>
+
+        {{ form_end(order) }}
+    </div><!-- /.container -->
+
+    <div id="stripePopup" class="modal form-modal payment-modal js-modal-page" role="dialog" data-toggle-dialog="payment" style="z-index: 3000;">
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+
+     <script type="text/javascript" src="https://js.stripe.com/v3/"></script>
+
+     {% javascripts
+    '@FrontBundle/Resources/public/js/stripe.js' %}
+        <script src="{{ asset_url }}" type="text/javascript"></script>
+    {% endjavascripts %}
+
+    <script>
+        var stripePopup = "{{ path('stripe_popup') }}";
+        var stripe = Stripe( '{{ stripePublicKey }}' );
+        var stripePaymentProcess = "{{ path('order_stripe_payment_process') }}";
+    </script>
+{% endblock %}
